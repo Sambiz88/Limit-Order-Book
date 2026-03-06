@@ -1,0 +1,16 @@
+mmap'd file buffer  (one pointer to the whole file)
+        │
+        ▼
+  [ Cursor Walker ]   ← reads 2-byte length, advances pointer
+        │
+        ▼
+    [ Decoder ]       ← switch on type byte, byte-swap fields
+        │
+        ▼
+  [ Symbol Filter ]   ← optional, drop unwanted stock_locate codes
+        │
+        ▼
+    [ Dispatch ]      ← calls into your order book
+
+
+itch file : [len][  msg  ][len][  msg  ][len][  msg  ]
