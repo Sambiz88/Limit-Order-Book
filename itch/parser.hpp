@@ -1,5 +1,6 @@
 #include <sys/mman.h>
 
+#DEFINE SESSION_LENGTH 10
 class Reader{
 
     Reader() = delete;              // must provide filename
@@ -12,14 +13,4 @@ class Reader{
 
     private:
     const char* filename_;
-}
-
-
-class Decoder{
-
-    Decoder
-}
-
-class OrderBook{
-
-}
+};
